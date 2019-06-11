@@ -1,0 +1,294 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paris Attitude</title>
+    <style type="text/css">
+        @@media screen and (max-width: 400px) {
+
+            .two-column .column,
+            .three-column .column {
+                max-width: 100% !important;
+            }
+
+            .two-column img {
+                max-width: 100% !important;
+            }
+
+            .three-column img {
+                max-width: 50% !important;
+            }
+        }
+
+        @@media screen and (min-width: 401px) and (max-width: 620px) {
+            .three-column .column {
+                max-width: 33% !important;
+            }
+
+            .two-column .column {
+                max-width: 50% !important;
+            }
+        }
+    </style>
+
+    <head>
+        <script type="text/javascript" src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+        <script type="text/javascript" src="./handlebars-v4.1.2.js"></script>
+        <script type='text/javascript' src='./node_modules/moment/min/moment.min.js'></script>
+        <script id="entry-template" type="text/x-handlebars-template">
+
+            <center class="wrapper"
+            style="width:100%;table-layout:fixed;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+            <div class="webkit"
+                style="max-width:602px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;background-color:#ffffff;">
+                <!--[if (gte mso 9)|(IE)]>
+                <table width="600" align="center" style="border-spacing:0;font-family:sans-serif;color:#333333;" >
+                <tr>
+                <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+                <![endif]-->
+                <table class="outer" align="center"
+                    style="border-spacing:0;font-family:sans-serif;color:#333333;margin:0 auto;width:100%;max-width:602px;background-color:#ffffff;border-right:1px solid #E7E8EA;border-left:1px solid #E7E8EA;border-top:1px solid #E7E8EA;font-size:14px;">
+                    <!--LOGO-->
+                    <tr>
+                        <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                            <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+                                <tr>
+                                    <td class="inner contents logo"
+                                        style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;width:100%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align:left;">
+                                        <a target="_blank"
+                                            href="https://www.parisattitude.com/?utm_source=smtp&utm_medium=email"
+                                            style="color:#d437b6;text-decoration:none;" rel="noopener external">
+                                            <img src="https://cdn.ofsys.com/T/OFSYS/H/C430/1249773/rfatX8/logo-2017.gif"
+                                                alt="Paris Attitude - Location meublée" width="210" border="0"
+                                                style="border-width:0;" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="one-column"
+                            style="padding-bottom:0;padding-right:0;padding-left:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;">
+                            <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+                                <tr>
+                                    <td
+                                        style="padding-top:20px;padding-bottom:20px;padding-right:20px;padding-left:20px;width:100%;text-align:left;">
+                                        Bonjour,
+                                        <br /><br />
+                                        Sauf erreur de notre part, nous n’avons pas encore reçu votre paiement de
+                                        {{product.TotalCashing}} € pour votre location de l’appartement #
+                                        {{accommodation.reference }} au
+                                        {{accommodation.fullAddress}}
+                                        pour les dates du {{formatDate product.arivalDate "short"}} au
+                                        {{formatDate  booking.departureDate "short"}} conformément à votre contrat n°
+                                        {{booking.reference}} du {{formatDate booking.departureDate "short"}}
+                                        <br /><br />
+                                        Nous vous rappellons que le paiement est dû au plus tard le
+                                        {{booking.arivalDate}}. Ainsi, merci de bien vouloir procéder
+                                        au règlement dans les plus brefs délais.
+                                        <br /><br />
+                                        <a target="_blank" href='{{accounting.PaymentPageUrl}}'
+                                            style="color:#D437b6;">Cliquez
+                                            ici</a> pour aller à la page des moyens de paiement.
+                                        <br /><br />
+                                        Nous vous remercions par avance et vous souhaitons une bonne journée.<br />
+                                        L'équipe Paris Attitude
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!--FOOTER LOGO-->
+                    <tr>
+                        <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                            <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+                                <tr>
+                                    <td class="inner footer"
+                                        style="padding-top:10px;padding-right:10px;padding-left:10px;background-color:#4b545d;color:#d9d7d8;text-align:center;padding-bottom:10px;">
+                                        <a target="_blank"
+                                            href="https://www.parisattitude.com/?utm_source=smtp&utm_medium=email"
+                                            style="text-decoration:none;color:#d9d7d8;font-size:11px;"
+                                            rel="noopener external">
+                                            <img src="https://cdn.ofsys.com/T/OFSYS/H/C430/1219692/6uhkUQ/logo-footer-150x20.gif"
+                                                alt="Paris Attitude - Location meublée" width="150" border="0"
+                                                style="border-width:0;" />
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <!--COORDONNEES-->
+                    <tr>
+                        <td class="three-column footer"
+                            style="padding-top:0;padding-right:0;padding-left:0;background-color:#4b545d;color:#d9d7d8;padding-bottom:10px;text-align:center;font-size:0;">
+                            <!--[if (gte mso 9)|(IE)]>
+                            <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;" >
+                            <tr>
+                            <td width="200" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+                            <![endif]-->
+                            <div class="column" style="width:100%;max-width:200px;display:inline-block;vertical-align:top;">
+                                <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+                                    <tr>
+                                        <td class="inner"
+                                            style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;">
+                                            <table class="contents"
+                                                style="border-spacing:0;font-family:sans-serif;color:#333333;width:100%;font-size:14px;text-align:center;">
+                                                <tr>
+                                                    <td
+                                                        style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                        <p style="margin:0;color:#d9d7d8;font-size:11px;">
+                                                            21, rue Vauvenargues - 75018 Paris
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td><td width="200" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+                            <![endif]-->
+                            <div class="column" style="width:100%;max-width:200px;display:inline-block;vertical-align:top;">
+                                <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+                                    <tr>
+                                        <td class="inner"
+                                            style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;">
+                                            <table class="contents"
+                                                style="border-spacing:0;font-family:sans-serif;color:#333333;width:100%;font-size:14px;text-align:center;">
+                                                <tr>
+                                                    <td
+                                                        style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                        <p style="margin:0;color:#d9d7d8;font-size:11px;">+33 (0)1 42 96 31
+                                                            46</p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td><td width="200" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+                            <![endif]-->
+                            <div class="column" style="width:100%;max-width:200px;display:inline-block;vertical-align:top;">
+                                <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+                                    <tr>
+                                        <td class="inner"
+                                            style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;">
+                                            <table class="contents"
+                                                style="border-spacing:0;font-family:sans-serif;color:#333333;width:100%;font-size:14px;text-align:center;">
+                                                <tr>
+                                                    <td
+                                                        style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                                                        <p style="margin:0;color:#d9d7d8;font-size:11px;">
+                                                            <a target="_blank" href="mailto:mail@parisattitude.com"
+                                                                style="text-decoration:none;color:#d9d7d8;font-size:11px;"
+                                                                rel="noopener external">
+                                                                gestion@parisattitude.com
+                                                            </a>
+                                                        </p>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]-->
+                        </td>
+                    </tr>
+                </table>
+                <!--[if (gte mso 9)|(IE)]>
+                </td>
+                </tr>
+                </table>
+                <![endif]-->
+            </div>
+        </center>
+
+
+    </script>
+        <script text='text/javascript'>
+            var DateFormats = {
+                short: "DD MMMM - YYYY",
+                long: "dddd DD.MM.YYYY HH:mm"
+            };
+
+            //  H.registerHelpers(Handlebars); 
+            Handlebars.registerHelper('if', function (conditional, options) {
+                if (conditional) {
+                    return options.fn(this);
+                } else {
+                    return options.inverse(this);
+                }
+            });
+
+            Handlebars.registerHelper("formatDate", function (datetime, format) {
+                console.log(datetime)
+                if (moment) {
+                    format = DateFormats[format] || format;
+                    return moment(datetime).format(format);
+                }
+                else {
+                    return datetime;
+                }
+
+            });
+
+            var DateFormats = {
+                short: "DD MMMM - YYYY",
+                long: "dddd DD.MM.YYYY HH:mm"
+            };
+
+
+            Handlebars.registerHelper("math", function (lvalue, operator, rvalue, options) {
+                lvalue = parseFloat(lvalue);
+                rvalue = parseFloat(rvalue);
+
+                return {
+                    "+": lvalue + rvalue,
+                    "-": lvalue - rvalue,
+                    "*": lvalue * rvalue,
+                    "/": lvalue / rvalue,
+                    "%": lvalue % rvalue
+                }[operator];
+            });
+
+            Handlebars.registerHelper("formatAmount", function (amount, currency, options) {
+                var v = parseFloat(amount) / 100;
+                // return new Intl.NumberFormat('en', { maximumSignificantDigits: 2 }).format(v));
+            });
+
+        </script>
+        <script type='text/javascript' src="./context.js"></script>
+    </head>
+
+<body id="render">
+</body>
+
+<script type='text/javascript'>
+    console.log(context)
+    var source = document.getElementById("entry-template").innerHTML;
+    var template = Handlebars.compile(source);
+    var html = template(context);
+    console.log('template html', html)
+    document.getElementById("render").innerHTML = html;
+</script>
+
+</html>

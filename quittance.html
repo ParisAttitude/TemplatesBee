@@ -1,0 +1,216 @@
+<html>
+
+<head>
+    <script type="text/javascript" src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script type="text/javascript" src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+    <script type="text/javascript" src="./handlebars-v4.1.2.js"></script>
+    <script id="entry-template" type="text/x-handlebars-template">
+<div>
+    <!-- <img src="http://www.parisattitude.com/images/header/header6.jpg" alt="header6" width="640" height="90px" /> -->
+    <img src="https://cdn.ofsys.com/T/OFSYS/H/C430/1249773/rfatX8/logo-2017.gif" alt="Paris Attitude - Location meublée"
+        width="210" border="0" style="border-width:0;" />
+</div>
+<br />
+<table align="left" border="0" cellpadding="0" cellspacing="0" width="0">
+    <tbody>
+        <tr>
+            <td colspan="14" nowrap="nowrap" style="width:605px;">
+                <h3 style="text-align: center;background-color:lightgrey">Quittance de loyer ou Indemnité d’Occupation {{booking.reference}}<a
+                        name="txt_numcontrat"></a></h3>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="7" nowrap="nowrap" rowspan="3" style="width:303px;"><strong>Paris Attitude</strong></td>
+            <td colspan="5" nowrap="nowrap" style="width:182px;"><strong>R&eacute;f&eacute;rence de
+                    l&rsquo;appartement</strong></td>
+            <td colspan="2" nowrap="nowrap" style="width:121px;"><strong>Date</strong></td>
+        </tr>
+        <tr>
+            <td colspan="2" nowrap="nowrap" style="width:47px;height:38px;">&nbsp;</td>
+            <td colspan="3" nowrap="nowrap" style="width:135px;height:38px;"><a name="aptID"></a><span
+                    style="font-size:12px"><strong>#{{booking.reference}}</strong></span></td>
+            <td colspan="2" nowrap="nowrap" style="width:121px;height:38px;"><a name="txtdatejour_fr"></a><span
+                    style="font-size:12px"><strong>{{DateDuJourFR}}</strong></span></td>
+        </tr>
+        <tr>
+            <td colspan="2" nowrap="nowrap" style="width:47px;">&nbsp;</td>
+            <td colspan="3" nowrap="nowrap" style="width:135px;">&nbsp;</td>
+            <td nowrap="nowrap" style="width:66px;">&nbsp;</td>
+            <td nowrap="nowrap" style="width:55px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="7" nowrap="nowrap" style="width:303px;"><span style="font-size:12px">21 rue Vauvenargues -
+                    75018 Paris</span></td>
+            <td colspan="5" nowrap="nowrap" style="width:182px;"><span style="font-size:12px"><strong>P&eacute;riode de
+                        location</strong></span></td>
+            <td colspan="2" nowrap="nowrap" style="width:121px;"><span style="font-size:12px"><strong>Nombre de
+                        nuits</strong></span></td>
+        </tr>
+        <tr>
+            <td colspan="7" nowrap="nowrap" style="width:303px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="3" nowrap="nowrap" style="width:63px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:118px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td nowrap="nowrap" style="width:66px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td nowrap="nowrap" style="width:55px;"><span style="font-size:12px">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td colspan="7" nowrap="nowrap" style="width:303px;"><span style="font-size:12px">RCS Paris: B439 328
+                    410</span></td>
+            <td colspan="5" nowrap="nowrap" style="width:182px;"><span style="font-size:12px">du</span></td>
+            <td nowrap="nowrap" style="width:66px;"><span style="font-size:12px"><strong>Mois</strong></span></td>
+            <td nowrap="nowrap" style="width:55px;"><span style="font-size:12px"><strong>Nuits</strong></span></td>
+        </tr>
+        <tr>
+            <td colspan="7" nowrap="nowrap" style="width:303px;"><span style="font-size:12px">N&deg; TVA: FR70 439 328
+                    410</span></td>
+            <td colspan="5" nowrap="nowrap" style="width:182px;"><span style="font-size:12px"><a
+                        name="txtd1"></a><strong>{{RqStartFR}}</strong></span></td>
+            <td nowrap="nowrap" rowspan="3" style="width:66px;"><span style="font-size:12px">{{NbMonths}}</span></td>
+            <td nowrap="nowrap" rowspan="3" style="width:55px;"><span style="font-size:12px">{{NbNights}}</span></td>
+        </tr>
+        <tr>
+            <td colspan="7" nowrap="nowrap" style="width:303px;"><span style="font-size:12px">Phone: +33 (0)1 42 96 31
+                    46<br />
+                    Fax 1: +33 (0)1 42 96 27 86</span></td>
+            <td colspan="5" nowrap="nowrap" style="width:182px;"><span style="font-size:12px">au</span></td>
+        </tr>
+        <tr>
+            <td colspan="7" nowrap="nowrap" style="width:303px;"><span style="font-size:12px">Fax 2: +33 (0)1 42 21 47
+                    81&nbsp; &ndash; E-mail: <br /></span>mail@parisattitude.com</td>
+            <td colspan="5" nowrap="nowrap" style="width:182px;"><span style="font-size:12px"><a
+                        name="txtd2"></a><strong>{{RqEndFR}}</strong></span></td>
+        </tr>
+        <tr>
+            <td colspan="7" nowrap="nowrap" style="width:303px;">www.parisattitude.com</td>
+            <td colspan="3" nowrap="nowrap" style="width:63px;">&nbsp;</td>
+            <td colspan="2" nowrap="nowrap" style="width:118px;">&nbsp;</td>
+            <td nowrap="nowrap" style="width:66px;">&nbsp;</td>
+            <td nowrap="nowrap" style="width:55px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2" nowrap="nowrap" style="width:142px;">&nbsp;</td>
+            <td colspan="5" nowrap="nowrap" style="width:161px;">&nbsp;</td>
+            <td colspan="3" nowrap="nowrap" style="width:63px;">&nbsp;</td>
+            <td colspan="2" nowrap="nowrap" style="width:118px;">&nbsp;</td>
+            <td nowrap="nowrap" style="width:66px;">&nbsp;</td>
+            <td nowrap="nowrap" style="width:55px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="10" nowrap="nowrap" style="width:366px;">
+                <h1><strong><span style="font-size:14px">NOM / PRENOM OU RAISON SOCIALE</span></strong></h1>
+            </td>
+            <td colspan="4" nowrap="nowrap" style="width:239px;">
+                <h1><strong><span style="font-size:14px">ADRESSE DE L&rsquo;APPARTEMENT</span></strong></h1>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="10" nowrap="nowrap" style="width:366px;"><a name="txttenant"></a>&nbsp;<br />
+                {{TenantFirstName}} {{TenantLastName}}<br />
+                {{TenantAddress}} {{TenantCountryFR}}</td>
+            <td colspan="4" nowrap="nowrap" style="width:239px;"><a name="txt19"></a>&nbsp;<br />
+                <span style="font-size:14px">{{AptNo}} {{AptStreet}}<br />
+                    {{AptZip}} {{AptCity}}</span></td>
+        </tr>
+        <tr>
+            <td colspan="10" nowrap="nowrap" style="width:366px;">&nbsp;</td>
+            <td colspan="4" nowrap="nowrap" style="width:239px;"><a name="txt192"></a>&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="14" nowrap="nowrap" style="width:605px;">&nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="14" nowrap="nowrap" style="width:605px;">
+                <h1><strong><span style="font-size:14px">A PAYER&nbsp;</span></strong></h1>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" nowrap="nowrap" style="width:152px;">&nbsp;</td>
+            <td colspan="5" nowrap="nowrap" style="width:160px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:55px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td nowrap="nowrap" style="width:78px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:106px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td nowrap="nowrap" style="width:55px;"><span style="font-size:12px">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td colspan="3" nowrap="nowrap" style="width:152px;"><span style="font-size:12px">Loyer de l&#39;appartement
+                    :</span></td>
+            <td colspan="5" nowrap="nowrap" style="width:160px;"><span style="font-size:12px"><a
+                        name="txtloyer"></a>{{AptFee}}</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:55px;"><span style="font-size:12px">&nbsp;euros</span></td>
+            <td nowrap="nowrap" style="width:78px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:106px;"><span style="font-size:12px"><a
+                        name="txtloyer2"></a>{{TotalAptFee}}</span></td>
+            <td nowrap="nowrap" style="width:55px;"><span style="font-size:12px">euros</span></td>
+        </tr>
+        <tr>
+            <td colspan="3" nowrap="nowrap" style="width:152px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="5" nowrap="nowrap" style="width:160px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:55px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td nowrap="nowrap" style="width:78px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:106px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td nowrap="nowrap" style="width:55px;"><span style="font-size:12px">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td colspan="11" nowrap="nowrap" style="width:445px;"><span style="font-size:12px">Provisions sur
+                    charges&nbsp;<a name="addsecu_fr"></a></span></td>
+            <td colspan="2" nowrap="nowrap" style="width:106px;"><span style="font-size:12px"><a
+                        name="txtdepot"></a>{{psc}}</span></td>
+            <td nowrap="nowrap" style="width:55px;"><span style="font-size:12px">euros</span></td>
+        </tr>
+        <tr>
+            <td colspan="2" nowrap="nowrap" style="width:142px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="6" nowrap="nowrap" style="width:170px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:55px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td nowrap="nowrap" style="width:78px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:106px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td nowrap="nowrap" style="width:55px;"><span style="font-size:12px">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td colspan="2" nowrap="nowrap" style="width:142px;">
+                <h3><span style="font-size:12px">TOTAL</span></h3>
+            </td>
+            <td colspan="6" nowrap="nowrap" style="width:170px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:55px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td nowrap="nowrap" style="width:78px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:106px;"><span style="font-size:12px"><a
+                        name="txttotal1"></a><strong>{{total}}</strong></span></td>
+            <td nowrap="nowrap" style="width:55px;"><span style="font-size:12px"><strong>&nbsp;euros</strong></span>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" nowrap="nowrap" style="width:142px;"><span style="font-size:14px">&nbsp;<span
+                        style="color:#FF0000">Payer le </span></span></td>
+            <td colspan="6" nowrap="nowrap" style="width:170px;"><span style="font-size:14px">&nbsp;<strong>&nbsp;<span
+                            style="color:#FF0000">{{datePaiment}}</span></strong></span></td>
+            <td colspan="2" nowrap="nowrap" style="width:55px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td nowrap="nowrap" style="width:78px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td colspan="2" nowrap="nowrap" style="width:106px;"><span style="font-size:12px">&nbsp;</span></td>
+            <td nowrap="nowrap" style="width:55px;"><span style="font-size:12px">&nbsp;</span></td>
+        </tr>
+        <tr>
+            <td colspan="14" nowrap="nowrap" style="width:605px;">
+                <h1>&nbsp;</h1>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</script>
+    <script type='text/javascript' src="./context.js"></script>
+
+</head>
+
+<body id="render" style="background-color: #EEE7F5;
+font-family: Verdana;
+font-size: 11px;
+margin: 50px;">
+</body>
+
+<script type='text/javascript'>
+    var source = document.getElementById("entry-template").innerHTML;
+    var template = Handlebars.compile(source);
+    var html = template(context);
+    document.getElementById("render").innerHTML = html;
+</script>
+
+
+</html>

@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <!--[if !mso]><!-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!--<![endif]-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paris Attitude</title>
+  <style type="text/css">
+    @@media screen and (max-width: 400px) {
+
+      .two-column .column,
+      .three-column .column {
+        max-width: 100% !important;
+      }
+
+      .two-column img {
+        max-width: 100% !important;
+      }
+
+      .three-column img {
+        max-width: 50% !important;
+      }
+    }
+
+    @@media screen and (min-width: 401px) and (max-width: 620px) {
+      .three-column .column {
+        max-width: 33% !important;
+      }
+
+      .two-column .column {
+        max-width: 50% !important;
+      }
+    }
+  </style>
+  <!--[if (gte mso 9)|(IE)]>
+      <style type="text/css">
+        table {
+          border-collapse: collapse !important;
+        }
+      </style>
+    <![endif]-->
+
+  <script type="text/javascript" src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script type="text/javascript" src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+  <script type="text/javascript" src="./handlebars-v4.1.2.js"></script>
+  <script id="entry-template" type="text/x-handlebars-template">
+  <center class="wrapper"
+    style="width:100%;table-layout:fixed;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;">
+    <div class="webkit"
+      style="max-width:602px;margin-top:0;margin-bottom:0;margin-right:auto;margin-left:auto;background-color:#ffffff;">
+      <!--[if (gte mso 9)|(IE)]>
+            <table width="600" align="center" style="border-spacing:0;font-family:sans-serif;color:#333333;" >
+            <tr>
+            <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+            <![endif]-->
+      <table class="outer" align="center"
+        style="border-spacing:0;font-family:sans-serif;color:#333333;margin:0 auto;width:100%;max-width:602px;background-color:#ffffff;border-right:1px solid #E7E8EA;border-left:1px solid #E7E8EA;border-top:1px solid #E7E8EA;font-size:14px;">
+        <!--LOGO-->
+        <tr>
+          <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+            <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+              <tr>
+                <td class="inner contents logo"
+                  style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;width:100%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align:left;">
+                  <a target="_blank" href="https://www.parisattitude.com/?utm_source=smtp&utm_medium=email"
+                    style="color:#d437b6;text-decoration:none;" rel="noopener external">
+                    <img src="https://cdn.ofsys.com/T/OFSYS/H/C430/1249773/rfatX8/logo-2017.gif"
+                      alt="Paris Attitude - Location meublée" width="210" border="0" style="border-width:0;" />
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="one-column"
+            style="padding-bottom:0;padding-right:0;padding-left:0;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;">
+            <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;font-size:14px;">
+              <tr>
+                <td
+                  style="padding-top:20px;padding-bottom:20px;padding-right:20px;padding-left:20px;width:100%;text-align:left;">
+                  Bonjour,<br /><br />
+
+                  <p>
+                    Nous vous informons avoir initié un virement, d’un montant
+                    de @Model.MoneyIn.ToRepayToOwner €, sur votre compte
+                    bancaire {{ Iban }}, dont vous trouverez ci-dessous les
+                    détails :
+                  </p>
+                  <p>
+                    Cette somme sera portée au crédit de votre compte sous 3 à
+                    4 jours ouvrés (le délai dépendant de votre banque).
+                  </p>
+                  <p>
+                    Contrat de location de l'appartement
+                    (#@Model.Contract.AptRef) situé au :
+                    @Model.Contract.AdrApt <br />
+                    Pour la période du
+                    @Model.MoneyIn.RentPeriodFrom.ToString("dd-MMM-yyyy") au
+                    @Model.MoneyIn.RentPeriodTo.ToString("dd-MMM-yyyy")
+                    conformément au contrat @Model.MoneyIn.ContractID.
+                    <br /><br />
+                  </p>
+
+                  <table width="100%"
+                    style="border-spacing:0;font-family:sans-serif;color:#333333;padding-left:20px;padding-right:20px">
+                    @if (@Model.Rent > 0) {
+                    <tr style="">
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: left;padding-top: 20px;padding-bottom: 10px;">
+                        Loyer
+                      </td>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: right;padding-top: 20px;padding-bottom: 10px;">
+                        @Model.Rent.ToString("#.00") €
+                      </td>
+                    </tr>
+                    } @if (@Model.Reservation > 0) {
+                    <tr>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: left;padding-top: 20px;padding-bottom: 10px;">
+                        Acompte
+                      </td>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: right;padding-top: 20px;padding-bottom: 10px;">
+                        @Model.Reservation.ToString("#.00") €
+                      </td>
+                    </tr>
+                    } @if (@Model.Balance > 0) {
+                    <tr>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: left;padding-top: 20px;padding-bottom: 10px;">
+                        Solde
+                      </td>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: right;padding-top: 20px;padding-bottom: 10px;">
+                        @Model.Balance.ToString("#.00") €
+                      </td>
+                    </tr>
+                    } @if (@Model.ProvisionCharges > 0) {
+                    <tr>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: left;padding-top: 20px;padding-bottom: 10px;">
+                        Provision sur charges
+                      </td>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: right;padding-top: 20px;padding-bottom: 10px;">
+                        @Model.ProvisionCharges.ToString("#.00") €
+                      </td>
+                    </tr>
+                    } @if (@Model.MoneyIn.Deposit > 0) {
+                    <tr>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: left;padding-top: 20px;padding-bottom: 10px;">
+                        Dépôt de garantie
+                      </td>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: right;padding-top: 20px;padding-bottom: 10px;">
+                        @Model.MoneyIn.Deposit.ToString("#.00") €
+                      </td>
+                    </tr>
+
+                    } @if (@Model.RpFee > 0) {
+                    <tr>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: left;padding-top: 20px;padding-bottom: 10px;">
+                        Frais d'agence propriétaire
+                      </td>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: right;padding-top: 20px;padding-bottom: 10px;">
+                        -@Model.RpFee.ToString("#.00") €
+                      </td>
+                    </tr>
+                    } @if (@Model.CheckinFee > 0) {
+                    <tr>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: left;padding-top: 20px;padding-bottom: 10px;">
+                        Frais d'entrée des lieux
+                      </td>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: right;padding-top: 20px;padding-bottom: 10px;">
+                        -@Model.CheckinFee.ToString("#.00") €
+                      </td>
+                    </tr>
+                    } @if (@Model.HouseworkFee > 0) {
+                    <tr>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: left;padding-top: 20px;padding-bottom: 10px;">
+                        Frais de ménage
+                      </td>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: right;padding-top: 20px;padding-bottom: 10px;">
+                        -@Model.HouseworkFee.ToString("#.00") €
+                      </td>
+                    </tr>
+                    } @if (@Model.MoneyIn.CashingManagementFee > 0) {
+                    <tr>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: left;padding-top: 20px;padding-bottom: 10px;">
+                        Honoraires de gestion
+                        (@Model.MoneyIn.ManagementFeeRate %)
+                      </td>
+                      <td
+                        style="width:50%;border-bottom-width:1px;border-bottom-style:solid;border-bottom-color:#E7E8EA;text-align: right;padding-top: 20px;padding-bottom: 10px;">
+                        -@Model.MoneyIn.CashingManagementFee.ToString("#.00")
+                        €
+                      </td>
+                    </tr>
+                    }
+                    <tr style="font-weight:bold;">
+                      <td style="width:50%;text-align: left;padding-top: 20px;padding-bottom: 30px;">
+                        Total à votre compte
+                      </td>
+                      <td style="width:50%;text-align: right;padding-top: 20px;padding-bottom: 30px;">
+                        @Model.MoneyIn.ToRepayToOwner €
+                      </td>
+                    </tr>
+                  </table>
+
+                  <p>
+                    Nous restons à votre entière disposition pour tout
+                    complément d’information.<br />
+                    Bien cordialement,<br /><br />
+                    <strong>Service Gestion Paris Attitude</strong><br />
+                    Tel : 01 42 96 31 46
+                  </p>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+        <!--FOOTER LOGO-->
+        <tr>
+          <td class="one-column" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+            <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+              <tr>
+                <td class="inner footer"
+                  style="padding-top:10px;padding-right:10px;padding-left:10px;background-color:#4b545d;color:#d9d7d8;text-align:center;padding-bottom:10px;">
+                  <a target="_blank" href="https://www.parisattitude.com/?utm_source=smtp&utm_medium=email"
+                    style="text-decoration:none;color:#d9d7d8;font-size:11px;" rel="noopener external">
+                    <img src="https://cdn.ofsys.com/T/OFSYS/H/C430/1219692/6uhkUQ/logo-footer-150x20.gif"
+                      alt="Paris Attitude - Location meublée" width="150" border="0" style="border-width:0;" />
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!--COORDONNEES-->
+        <tr>
+          <td class="three-column footer"
+            style="padding-top:0;padding-right:0;padding-left:0;background-color:#4b545d;color:#d9d7d8;padding-bottom:10px;text-align:center;font-size:0;">
+            <!--[if (gte mso 9)|(IE)]>
+                        <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;" >
+                        <tr>
+                        <td width="200" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+                        <![endif]-->
+            <div class="column" style="width:100%;max-width:200px;display:inline-block;vertical-align:top;">
+              <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+                <tr>
+                  <td class="inner" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;">
+                    <table class="contents"
+                      style="border-spacing:0;font-family:sans-serif;color:#333333;width:100%;font-size:14px;text-align:center;">
+                      <tr>
+                        <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                          <p style="margin:0;color:#d9d7d8;font-size:11px;">
+                            21, rue Vauvenargues - 75018 Paris
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!--[if (gte mso 9)|(IE)]>
+                        </td><td width="200" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+                        <![endif]-->
+            <div class="column" style="width:100%;max-width:200px;display:inline-block;vertical-align:top;">
+              <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+                <tr>
+                  <td class="inner" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;">
+                    <table class="contents"
+                      style="border-spacing:0;font-family:sans-serif;color:#333333;width:100%;font-size:14px;text-align:center;">
+                      <tr>
+                        <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                          <p style="margin:0;color:#d9d7d8;font-size:11px;">
+                            +33 (0)1 42 96 31 46
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!--[if (gte mso 9)|(IE)]>
+                        </td><td width="200" valign="top" style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;" >
+                        <![endif]-->
+            <div class="column" style="width:100%;max-width:200px;display:inline-block;vertical-align:top;">
+              <table width="100%" style="border-spacing:0;font-family:sans-serif;color:#333333;">
+                <tr>
+                  <td class="inner" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;">
+                    <table class="contents"
+                      style="border-spacing:0;font-family:sans-serif;color:#333333;width:100%;font-size:14px;text-align:center;">
+                      <tr>
+                        <td style="padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+                          <p style="margin:0;color:#d9d7d8;font-size:11px;">
+                            <a target="_blank" href="mailto:mail@parisattitude.com"
+                              style="text-decoration:none;color:#d9d7d8;font-size:11px;" rel="noopener external">
+                              gestion@parisattitude.com
+                            </a>
+                          </p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!--[if (gte mso 9)|(IE)]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]-->
+          </td>
+        </tr>
+      </table>
+
+      <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+    </div>
+  </center>
+  </script>
+
+  <script type='text/javascript' src="./context.js"></script>
+
+</head>
+
+<body id="render"
+  style="margin-top:0 !important;margin-bottom:0 !important;margin-right:0 !important;margin-left:0 !important;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;">
+</body>
+
+<script type='text/javascript'>
+  var source = document.getElementById("entry-template").innerHTML;
+  var template = Handlebars.compile(source);
+  var html = template(context);
+  document.getElementById("render").innerHTML = html;
+</script>
+
+
+</html>

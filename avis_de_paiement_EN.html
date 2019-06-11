@@ -1,0 +1,466 @@
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <!--[if !mso]><!-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!--<![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paris Attitude</title>
+    <style type="text/css">
+        body {
+            /*background-color: #341E4C;*/
+            background-color: #EEE7F5;
+            font-family: Verdana;
+            font-size: 11px;
+            margin: 50px;
+        }
+
+        #Facture {
+            width: 650px;
+            background-color: White;
+            padding: 5px;
+            border-radius: 10px;
+        }
+
+        /*------------------------------------------------------------------------------------
+            //
+            // Logo paris attitude facture
+            //
+            ------------------------------------------------------------------------------------*/
+        #Facture .Entete {
+            /*background-image: url(http://www.parisattitude.com/images/header/header6.jpg);*/
+            height: 100px;
+            padding-top: 5px;
+            padding-left: 5px;
+            position: relative;
+        }
+
+        #Facture .Entete .Logo {
+            position: absolute;
+            top: 10px;
+            background-color: #fff;
+            width: 205px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-left: 5px;
+        }
+
+        #Facture .Entete .LogoTexte {
+            color: White;
+            padding-left: 16px;
+            padding-top: 40px;
+            position: absolute;
+            top: 35px;
+        }
+
+        #Facture .Entete .LogoTexte a {
+            color: White !important;
+        }
+
+        /*------------------------------------------------------------------------------------
+            //
+            // Contenu de la facture
+            //
+            ------------------------------------------------------------------------------------*/
+
+        .FactureTitle {
+            background-color: #EEE7F5;
+            width: 100%;
+            font-size: 12px;
+        }
+
+        .Bloc {
+            /*background-color: #341E4C;*/
+            background-color: #EEE7F5;
+            /*background-color:#DED1ED;*/
+            padding: 5px;
+            border-radius: 10px;
+            width: 300px;
+            margin-top: 10px;
+        }
+
+        .Content {
+            padding-bottom: 10px;
+            padding-left: 5px;
+        }
+
+        .Bloc .BContent {
+            padding: 8px;
+            background-color: #fff;
+        }
+
+        .Bloc .BContent span {
+            font-weight: bold;
+        }
+
+        .Bloc .BContent div {
+            padding-bottom: 10px;
+        }
+
+        .Bloc .BTitle {
+            padding-left: 5px;
+            padding-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .Bloc .td1 {
+            border-right: dashed 1px #EEE7F5;
+        }
+
+        .Bloc .BContent table tr td {
+            font-size: 11px;
+            width: 77%;
+        }
+
+        .Bloc .BContent .td2 {
+            text-align: right;
+            padding-right: 10px;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        .fLeft {
+            float: left;
+        }
+
+        /*------------------------------------------------------------------------------------
+            //
+            // Footer paris attitude facture
+            //
+            ------------------------------------------------------------------------------------*/
+        #Facture .Footer {
+            /*background-image: url(http://www.parisattitude.com/images/header/header6.jpg);*/
+            color: White;
+            position: relative;
+            padding-left: 5px;
+        }
+
+        #Facture .Footer .LogoTexte {
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            top: 3px;
+            padding-left: 240px;
+        }
+
+        #Facture .Footer .LogoTexte a {
+            color: White !important;
+        }
+    </style>
+
+    <head>
+        <script type="text/javascript" src="./node_modules/handlebars/dist/handlebars.min.js"></script>
+        <script type="text/javascript" src="./handlebars-v4.1.2.js"></script>
+        <script type='text/javascript' src='./node_modules/moment/min/moment.min.js'></script>
+        <script id="entry-template" type="text/x-handlebars-template">
+            <div align="center">
+                <div id="Facture" align="left">
+                    <div class="Entete">
+                        <div>
+                            <img src="http://www.parisattitude.com/images/header/header6.jpg" alt="header6" width="640"
+                                height="90px" />
+                        </div>
+                        <div class="Logo">
+                            <img src='http://www.parisattitude.com/images/footer/logo-parisattitude.png'>
+                        </div>
+                        <div class="LogoTexte">
+                            Tel. : 01 42 96 31 46 | Fax1 : 01 42 96 27 86 | Fax2 : 01 42 21 47 81 | <a
+                                href="mailto:mail@parisattitude.com">
+                                E-mail : mail@parisattitude.com
+                            </a>
+                        </div>
+                    </div>
+                    <div class="Content">
+                        <div style="text-align: center; font-size: 17px; padding-bottom: 10px; margin-right: 10px;">
+                            <b>PAYMENT</b>
+                        </div>
+                        <div>
+                            Booking Reference : {{booking.reference}}
+                        </div>
+                        <div style="clear: both;">
+                        </div>
+                        <div class="Bloc" style="width: 260px; float: left; margin-right: 10px;">
+                            <div class="BTitle">
+                                YOUR AGENT 
+                            </div>
+                            <div class="BContent">
+                                <div>
+                                    <span>Agent :</span> Agent1 
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Bloc" style="width: 350px; float: left;">
+                            <div class="BTitle">
+                                RENTING
+                            </div>
+                            <div class="BContent">
+                                <div>
+                                    <span>Apartment Reference : </span>
+                                    # {{booking.selectedProposal.accommodation.reference}}
+                                </div>
+                                <div>
+                                    <span>Date : </span>{{formatDate now "short"}}
+                                </div>
+                                <div>
+                                    <span>Rental Period : 
+                                    </span>From  <span>{{formatDate booking.arrivalDate "short"}}</span> To 
+                                    <span>{{formatDate booking.departureDate "short"}}</span>
+                                </div>
+                                <div>
+                                    <span hidden>Number Of Night : 
+                                    </span>Month  <span>{{nbMonth}}</span> | Nights <span>
+                                            {{nbNight}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear: both;">
+                        </div>
+                        <div class="Bloc" style="width: 260px; float: left; margin-right: 10px;">
+                            <div class="BTitle">
+                                NAME / FIRSTNAME | COMPANY NAME 
+                            </div>
+                            <div class="BContent">
+                                <span>{{booking.customer.identity.lastName}} {{booking.customer.identity.firstName}}</span>
+                            </div>
+                        </div>
+                        <div class="Bloc" style="width: 350px; float: left;">
+                            <div class="BTitle">
+                                RENTAL ADDRESS 
+                            </div>
+                            <div class="BContent">
+                                <span>
+                                    {{accommodation.fullAddress}}<br />
+                                </span>
+                            </div>
+                        </div>
+                        <div style="clear: both;" />
+                        <div class="Bloc" style="width: 260px; float: left; margin-right: 10px;">
+                            <div class="BTitle">
+                                Wire transfer 
+                            </div>
+                            <div class="BContent">
+                                <div>
+                                    <table border="0" cellpadding="0" cellspacing="0">
+                                        <tr>
+                                            <td class='td2'><span>{{current_rent}} €</span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Bloc" style="width: 350px; float: left; ">
+                            <div class="BTitle">
+                                Payment online 
+
+                            </div>
+                            <div class="BContent">
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td class='td2'><span>{{current_rent}} </span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div style="clear: both;" />
+        
+                        <div class="Bloc" style="width: 630px; float: left; margin-right: 10px;">
+                            <div class="BTitle">
+                                PAYMENT ONLINE : {{current_rent}} €
+                            </div>
+                            <div class="BContent">
+                                <center>
+                                    <div class="clearfix">
+                                    </div>
+                                    <div style="width:320px;padding-bottom:0px;">
+                                        <div class="fLeft" style="padding-bottom:0px;">
+                                            <div class="fLeft" style="padding-right:10px;">
+                                                <a href="@Model.CardPaymentUrl">
+                                                    <img src="http://www.parisattitude.com/images/PayboxCards1.jpg" alt="paybox"
+                                                        width="97" border="0" />
+                                                </a>
+                                            </div>
+                                            <div class="fLeft">
+                                                <a href='{{accounting.CardPaymentUrl}}'>
+                                                    <img src="http://www.parisattitude.com/images/PayboxCards2.jpg" alt="paybox"
+                                                        width="82" border="0" />
+                                                </a>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                        <div class="fLeft" style="padding-bottom:0px; padding-left:10px;">
+                                            <a href='{{accounting.PaypalPaymentUrl}}'>
+                                                <img src="http://www.parisattitude.com/images/Paypal_cards.jpg" border="0"
+                                                    alt="paybox" width="104" />
+                                            </a>
+                                        </div>
+                                        <div class="clearfix" style="padding-bottom:0px;">
+                                        </div>
+                                    </div>
+                                    <div style="color: #341E4C; font-weight:bold;">
+                                        Click to pay 
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                        <div style="clear: both;">
+                        </div>
+                        <div style="clear: both;">
+                        </div>
+                        <div class="Bloc" style="width: 630px; float: left; margin-right: 10px;">
+                            <div class="BTitle">
+                                PARIS ATTITUDE'S BANKING INFORMATION 
+                            </div>
+                            <div class="BContent">
+                                <div align="center">
+                                    <i>Please provide copy of the wire transfer confirmation from your bank</i>
+                                </div>
+                                <div>
+                                    <span>Bank  : </span><span>CIC</span>
+                                </div>
+                                <div>
+                                    <span>Account Owner : </span><span>PARIS ATTITUDE SARL</span>
+                                </div>
+                                <div>
+                                    <span>Address : </span><span>CIC PARIS ORDERNER</span>
+                                </div>
+                                <div>
+                                    <span>Bank Code : </span><span>30066</span>
+                                </div>
+                                <div>
+                                    <span>Routing Number : </span><span>10631</span>
+                                </div>
+                                <div>
+                                    <span>Account Number  : </span><span>00020406902</span>
+                                </div>
+                                <div>
+                                    <span>Key Code : </span><span>39</span>
+                                </div>
+                                <div>
+                                    <span>IBAN (International Bank Account Number) : </span><span>
+                                        FR76 3006 6106 3100 0204
+                                        0690 239
+                                    </span>
+                                </div>
+                                <div>
+                                    <span>BIC (Bank Identifier Code) : </span><span>CMCIFRPP</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="clear: both;">
+                        </div>
+                    </div>
+                    <div class="Footer">
+                        <div>
+                            <img src="http://www.parisattitude.com/images/header/header6.jpg" alt="footer" width="640"
+                                height="80" />
+                        </div>
+                        <div class="LogoTexte">
+                            21 rue Vauvenargues 75018 Paris<br>
+                            RCS Paris : B439 328 410<br>
+                            N°TVA : FR70 439 328 410<br>
+                            <a href="http://www.parisattitude.com" target="_blank">www.parisattitude.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </script>
+        <script type='text/javascript' src="./context.js"></script>
+
+        <script text='text/javascript'>
+
+            Handlebars.registerHelper("current_rent", function () {
+                var lastQuittance = context.booking.orders[0].ids.find(order => {
+                    return (order.sequence === "QUITTANCE" && order.status === 'due')
+                })
+                return lastQuittance.total.toFixed(2)
+            })
+
+            // H.registerHelpers(Handlebars);
+            Handlebars.registerHelper('if', function (conditional, options) {
+                if (conditional) {
+                    return options.fn(this);
+                } else {
+                    return options.inverse(this);
+                }
+            });
+
+            Handlebars.registerHelper("formatDate", function (datetime, format) {
+                const DateFormats = {
+                    short: "DD-MM-YYYY",
+                    long: "dddd DD.MM.YYYY HH:mm"
+                }
+                if (moment) {
+                    format = DateFormats[format] || format;
+                    return moment(datetime).format(format);
+                }
+                else {
+                    return datetime;
+                }
+            });
+
+            function now() {
+                console.log('dans now')
+                return new Date()
+            }
+
+            console.log('Accès au context', context.booking.arrivalDate)
+
+            Handlebars.registerHelper('nbNight', function () {
+                console.log('Dans nbNight')
+                const a = moment(context.booking.arrivalDate)
+                const b = moment(context.booking.departureDate)
+                const nbDay = b.diff(a, 'days')
+                console.log(nbDay)
+                return nbDay
+            })
+
+            Handlebars.registerHelper('nbMonth', function () {
+                console.log('Dans nbNight')
+                const a = moment(context.booking.arrivalDate)
+                const b = moment(context.booking.departureDate)
+                const nbDay = b.diff(a, 'months')
+                console.log(nbDay)
+                return nbDay
+            })
+
+            Handlebars.registerHelper("math", function (lvalue, operator, rvalue, options) {
+                lvalue = parseFloat(lvalue);
+                rvalue = parseFloat(rvalue);
+
+                return {
+                    "+": lvalue + rvalue,
+                    "-": lvalue - rvalue,
+                    "*": lvalue * rvalue,
+                    "/": lvalue / rvalue,
+                    "%": lvalue % rvalue
+                }[operator];
+            });
+
+            Handlebars.registerHelper("formatAmount", function (amount, currency, options) {
+                var v = parseFloat(amount) / 100;
+                // return new Intl.NumberFormat('en', { maximumSignificantDigits: 2 }).format(v));
+            });
+
+        </script>
+    </head>
+
+<body id="render" style="background-color: #EEE7F5;
+font-family: Verdana;
+font-size: 11px;
+margin: 50px;">
+</body>
+
+<script type='text/javascript'>
+    var source = document.getElementById("entry-template").innerHTML;
+    var template = Handlebars.compile(source);
+    var html = template(context);
+    document.getElementById("render").innerHTML = html;
+</script>
+
+</html>
